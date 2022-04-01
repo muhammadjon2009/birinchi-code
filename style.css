@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    width: 400px;
+    height: 400px;
+    border-radius: 10px;
+    background-color: gainsboro;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.inside_box{
+    background-image: url('./content-slider-image-2.jpg');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    z-index: 1;
+    position: absolute  ;
+}
+
+.box:hover .inside_box{
+    transform: scale(2);
+}
+.box::before{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 3px;
+    background-color: #fff;
+    transition: 1.5s ease-in-out;
+    opacity: 0;
+    z-index: 4;
+}
+.box:hover:before{
+    width: 100%;
+    opacity: 1;
+}
+.bg_effect{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 3;
+    transition:.6s ease-in;
+}
+.box:hover .bg_effect{
+    background: #000;
+    opacity: .8;
+ }
+.harflar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column; 
+}
+.tepa{
+    width: 100%;
+    height: 50%;
+}
+.pas{
+    width: 100%;
+    height: 50%;      
+    margin-top: 330px;          
+}
+.tepa span{
+    color: white;
+    font-size: 25px;
+    opacity: 0;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    font-family: monospace;
+    text-transform: uppercase;
+}
+.pas span{
+    opacity: 0;
+    color: white;
+    font-size: 25px;
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    text-transform: uppercase;
+    font-family: monospace;
+}
+.box:hover .pas span{
+    transform: translateY(-150px);
+    opacity: 1;
+}
+.box:hover .tepa span{
+    transform: translateY(170px);
+    opacity: 1;
+}
